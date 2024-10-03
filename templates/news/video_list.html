@@ -1,0 +1,13 @@
+<!-- video_list.html -->
+{% extends 'news/base.html' %}
+
+{% block content %}
+<h2>Список видео</h2>
+{% for video in videos %}
+    <video width="320" height="240" controls>
+        <source src="{{ video.mp4_file.url }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <p>{{ video.title }}</p>
+{% endfor %}
+{% endblock %}
